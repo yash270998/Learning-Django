@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First App Static File</title>
+    <link rel="stylesheet" href = "{% static "css/mystyle.css" %}">
+</head>
+<body>
+    <h1>Mat Maan, Maa Chuda!</h1>
+    <!-- {{ insert_me }} -->
+    <h1>We are including models. Django Level 2</h1>
+    <div class = "djangotwo">
+        {% if access_records %}
+        <table>
+            <thead>
+                <th>Site Name</th>
+                <th>Date Accessed</th>
+            </thead>
+            {% for acc in access_records %}
+            <tr>
+                <td>{{ acc.name }}</td>
+                <td>{{ acc.date }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+            <p>No Access Recors Found!</p>
+        {% endif %}
+        
+    </div>
+
+    <h1>The Static File has been loaded like this</h1>
+    <img src="{% static "images/weatherapp.png" %}" alt = 'WeatherApp Image couldnt load!'>
+</body>
+</html>
