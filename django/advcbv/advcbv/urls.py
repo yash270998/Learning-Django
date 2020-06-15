@@ -20,5 +20,5 @@ from basic_app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     # url('^$',views.index),
-    url('^$',views.CBView.as_view()),
+    url('^$',views.IndexView.as_view()),
 ]
