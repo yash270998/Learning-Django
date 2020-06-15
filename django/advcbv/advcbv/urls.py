@@ -19,5 +19,6 @@ from django.conf.urls import url, include
 from basic_app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url('^$',views.index)
+    # url('^$',views.index),
+    url('^$',views.CBView.as_view()),
 ]
