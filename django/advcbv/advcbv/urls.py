@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # url('^$',views.index),
     url('^$',views.IndexView.as_view()),
+    url(r'^basic_app/',include('basic_app.urls')),
 ]
